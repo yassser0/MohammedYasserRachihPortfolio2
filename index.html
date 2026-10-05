@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed Yasser Rachih – Data Engineer & Full-Stack Developer</title>
+  <meta name="description"
+    content="Portfolio de Mohammed Yasser Rachih, Data Engineer Junior & Développeur Full-Stack. Master Data Science & Big Data, Casablanca." />
+  <meta name="keywords"
+    content="data engineer, full-stack, python, spark, kafka, big data, casablanca, maroc, portfolio" />
+  <meta name="author" content="Mohammed Yasser Rachih" />
+  <meta property="og:title" content="Mohammed Yasser Rachih – Data Engineer Portfolio" />
+  <meta property="og:description" content="Data Engineer Junior & Développeur Full-Stack – Casablanca, Maroc" />
+  <meta property="og:type" content="website" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    crossorigin="anonymous" />
+  <!-- Icons – Font Awesome 6.6.0 (TODO: update SRI hash if upgrading version) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar" role="complementary" aria-label="Profil">
+    <div class="sidebar-inner">
+
+      <!-- Profile -->
+      <div class="profile" id="profile-block">
+        <div class="profile-photo-wrap" id="profile-photo-wrap">
+          <img src="content.png" alt="Mohammed Yasser Rachih" class="profile-photo" width="130" height="130"
+            loading="eager" />
+          <span class="profile-status" aria-label="Disponible"></span>
+        </div>
+        <h1 class="profile-name" id="profile-name">Mohammed Yasser Rachih</h1>
+        <p class="profile-title" id="profile-title">
+          <span class="type-wrap"><span id="typing-el"></span><span class="cursor" aria-hidden="true">|</span></span>
+        </p>
+        <p class="profile-location" id="profile-location">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Casablanca, Maroc
+        </p>
+      </div>
+
+      <!-- Nav -->
+      <nav class="sidebar-nav" id="sidebar-nav" aria-label="Navigation">
+        <a href="#about" class="snav-link active" id="snav-about" data-section="about"><span class="snav-dot"
+            aria-hidden="true"></span>À propos</a>
+        <a href="#skills" class="snav-link" id="snav-skills" data-section="skills"><span class="snav-dot"
+            aria-hidden="true"></span>Compétences</a>
+        <a href="#experience" class="snav-link" id="snav-exp" data-section="experience"><span class="snav-dot"
+            aria-hidden="true"></span>Expérience</a>
+        <a href="#projects" class="snav-link" id="snav-projects" data-section="projects"><span class="snav-dot"
+            aria-hidden="true"></span>Projets</a>
+        <a href="#contact" class="snav-link" id="snav-contact" data-section="contact"><span class="snav-dot"
+            aria-hidden="true"></span>Contact</a>
+      </nav>
+
+      <!-- Social + CV -->
+      <div class="sidebar-footer" id="sidebar-footer">
+        <div class="social-row" aria-label="Réseaux sociaux">
+          <a href="https://github.com/yassser0" target="_blank" rel="noopener noreferrer" class="soc-btn"
+            id="soc-github" aria-label="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:yassirach17@gmail.com" class="soc-btn" id="soc-email" aria-label="Email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="tel:+212708472398" class="soc-btn" id="soc-phone" aria-label="Téléphone">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          </a>
+        </div>
+        <a href="cv_Fr.pdf" download="Mohammed_Yasser_Rachih_CV.pdf" class="cv-btn" id="cv-download-btn">
+          <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+          <span>Télécharger CV</span>
+        </a>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ===== MOBILE HEADER ===== -->
+  <header class="mobile-header" id="mobile-header" role="banner">
+    <div class="mh-inner">
+      <span class="mh-logo">MYR<span class="mh-dot">.</span></span>
+      <button class="mh-toggle" id="mh-toggle-btn" aria-label="Ouvrir le menu" aria-expanded="false"
+        aria-controls="sidebar">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+  <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content" id="main-content" role="main">
+
+    <!-- ── ABOUT ── -->
+    <section id="about" class="section" aria-labelledby="about-h">
+      <div class="section-label" aria-hidden="true">01</div>
+      <h2 class="section-title" id="about-h">À propos</h2>
+
+      <div class="about-grid">
+        <div class="about-text-col">
+          <p class="lead-text">
+            Diplômé d'un <strong>Master Data Science &amp; Big Data</strong>, je construis des pipelines de données
+            robustes, des architectures Big Data scalables et des applications Full-Stack innovantes.
+          </p>
+          <p class="body-text">
+            Mon approche structurée — de la base de données jusqu'à l'interface utilisateur — me permet de m'intégrer
+            dans un environnement professionnel où je mets en pratique mes compétences en <em>ingénierie des
+              données</em> et en <em>développement Full-Stack</em>.
+          </p>
+
+          <div class="about-pills" aria-label="Points forts">
+            <span class="pill pill-blue"><i class="fa-solid fa-database" aria-hidden="true"></i>ETL / ELT</span>
+            <span class="pill pill-purple"><i class="fa-brands fa-python" aria-hidden="true"></i>Python</span>
+            <span class="pill pill-cyan"><i class="fa-solid fa-bolt" aria-hidden="true"></i>Apache Spark</span>
+            <span class="pill pill-green"><i class="fa-brands fa-docker" aria-hidden="true"></i>Docker</span>
+            <span class="pill pill-orange"><i class="fa-solid fa-brain" aria-hidden="true"></i>ML / IA</span>
+            <span class="pill pill-blue"><i class="fa-solid fa-code" aria-hidden="true"></i>Full-Stack</span>
+          </div>
+        </div>
+
+        <div class="about-cards-col">
+          <div class="acard" id="acard-edu">
+            <div class="acard-icon acard-icon-blue" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div>
+              <p class="acard-title">Master Data Science & Big Data</p>
+              <p class="acard-sub">FSBM – Casablanca · 2024–2026</p>
+            </div>
+          </div>
+          <div class="acard" id="acard-exp">
+            <div class="acard-icon acard-icon-purple" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></div>
+            <div>
+              <p class="acard-title">Stage Data Engineering</p>
+              <p class="acard-sub">Marsa Maroc · 2026</p>
+            </div>
+          </div>
+          <div class="acard" id="acard-cert">
+            <div class="acard-icon acard-icon-orange" aria-hidden="true"><i class="fa-solid fa-award"></i></div>
+            <div>
+              <p class="acard-title">Oracle Certified Professional</p>
+              <p class="acard-sub">Java SE 17 · MySQL DBA · DevOps</p>
+            </div>
+          </div>
+          <div class="acard" id="acard-lang">
+            <div class="acard-icon acard-icon-green" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
+            <div>
+              <p class="acard-title">Langues</p>
+              <p class="acard-sub">🇲🇦 Arabe · 🇫🇷 Français · 🇬🇧 Anglais</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="stats-bar" aria-label="Chiffres clés">
+        <div class="sbar-item">
+          <span class="sbar-num" data-target="20" id="stat-repos">0</span>
+          <span class="sbar-label">Repos GitHub</span>
+        </div>
+        <div class="sbar-sep" aria-hidden="true"></div>
+        <div class="sbar-item">
+          <span class="sbar-num" data-target="2" id="stat-years">0</span>
+          <span class="sbar-label">Ans d'exp</span>
+        </div>
+        <div class="sbar-sep" aria-hidden="true"></div>
+        <div class="sbar-item">
+          <span class="sbar-num" data-target="15" id="stat-tech">0</span>
+          <span class="sbar-label">Technologies</span>
+        </div>
+        <div class="sbar-sep" aria-hidden="true"></div>
+        <div class="sbar-item">
+          <span class="sbar-num" data-target="4" id="stat-certs">0</span>
+          <span class="sbar-label">Certifications</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section id="skills" class="section" aria-labelledby="skills-h">
+      <div class="section-label" aria-hidden="true">02</div>
+      <h2 class="section-title" id="skills-h">Compétences</h2>
+
+      <div class="skills-layout">
+
+        <div class="skill-group" id="sg-de">
+          <h3 class="sg-title"><span class="sg-icon sg-icon-blue" aria-hidden="true"><i
+                class="fa-solid fa-database"></i></span>Data Engineering</h3>
+          <div class="skill-list">
+            <div class="skill-row" id="sk-spark">
+              <span class="sk-name">Apache Spark</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Apache Spark 90%">
+                <div class="sk-bar" data-width="90"></div>
+              </div>
+              <span class="sk-pct">90%</span>
+            </div>
+            <div class="skill-row" id="sk-kafka">
+              <span class="sk-name">Apache Kafka</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Apache Kafka 85%">
+                <div class="sk-bar" data-width="85"></div>
+              </div>
+              <span class="sk-pct">85%</span>
+            </div>
+            <div class="skill-row" id="sk-airflow">
+              <span class="sk-name">Apache Airflow</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Apache Airflow 85%">
+                <div class="sk-bar" data-width="85"></div>
+              </div>
+              <span class="sk-pct">85%</span>
+            </div>
+            <div class="skill-row" id="sk-sql">
+              <span class="sk-name">SQL · PostgreSQL · MySQL</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"
+                aria-label="SQL 88%">
+                <div class="sk-bar" data-width="88"></div>
+              </div>
+              <span class="sk-pct">88%</span>
+            </div>
+            <div class="skill-row" id="sk-etl">
+              <span class="sk-name">ETL / ELT · dbt</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"
+                aria-label="ETL/ELT 82%">
+                <div class="sk-bar" data-width="82"></div>
+              </div>
+              <span class="sk-pct">82%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group" id="sg-dev">
+          <h3 class="sg-title"><span class="sg-icon sg-icon-purple" aria-hidden="true"><i
+                class="fa-solid fa-code"></i></span>Développement</h3>
+          <div class="skill-list">
+            <div class="skill-row" id="sk-python">
+              <span class="sk-name">Python</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Python 92%">
+                <div class="sk-bar" data-width="92"></div>
+              </div>
+              <span class="sk-pct">92%</span>
+            </div>
+            <div class="skill-row" id="sk-java">
+              <span class="sk-name">Java · Spring Boot</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Java 85%">
+                <div class="sk-bar" data-width="85"></div>
+              </div>
+              <span class="sk-pct">85%</span>
+            </div>
+            <div class="skill-row" id="sk-react">
+              <span class="sk-name">React.js · Node.js</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                aria-label="React 80%">
+                <div class="sk-bar" data-width="80"></div>
+              </div>
+              <span class="sk-pct">80%</span>
+            </div>
+            <div class="skill-row" id="sk-ts">
+              <span class="sk-name">TypeScript</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                aria-label="TypeScript 75%">
+                <div class="sk-bar" data-width="75"></div>
+              </div>
+              <span class="sk-pct">75%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group" id="sg-devops">
+          <h3 class="sg-title"><span class="sg-icon sg-icon-cyan" aria-hidden="true"><i
+                class="fa-brands fa-docker"></i></span>DevOps & Cloud</h3>
+          <div class="skill-list">
+            <div class="skill-row" id="sk-docker">
+              <span class="sk-name">Docker · Kubernetes</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Docker 85%">
+                <div class="sk-bar" data-width="85"></div>
+              </div>
+              <span class="sk-pct">85%</span>
+            </div>
+            <div class="skill-row" id="sk-cicd">
+              <span class="sk-name">CI/CD · Jenkins · Git</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                aria-label="CI/CD 80%">
+                <div class="sk-bar" data-width="80"></div>
+              </div>
+              <span class="sk-pct">80%</span>
+            </div>
+            <div class="skill-row" id="sk-oci">
+              <span class="sk-name">Oracle Cloud Infra</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Oracle Cloud 72%">
+                <div class="sk-bar" data-width="72"></div>
+              </div>
+              <span class="sk-pct">72%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group" id="sg-ml">
+          <h3 class="sg-title"><span class="sg-icon sg-icon-orange" aria-hidden="true"><i
+                class="fa-solid fa-brain"></i></span>Data Science & ML</h3>
+          <div class="skill-list">
+            <div class="skill-row" id="sk-ml">
+              <span class="sk-name">Machine Learning</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                aria-label="ML 85%">
+                <div class="sk-bar" data-width="85"></div>
+              </div>
+              <span class="sk-pct">85%</span>
+            </div>
+            <div class="skill-row" id="sk-pandas">
+              <span class="sk-name">Pandas · NumPy · Sklearn</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Pandas 88%">
+                <div class="sk-bar" data-width="88"></div>
+              </div>
+              <span class="sk-pct">88%</span>
+            </div>
+            <div class="skill-row" id="sk-powerbi">
+              <span class="sk-name">Power BI · Visualisation</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Power BI 78%">
+                <div class="sk-bar" data-width="78"></div>
+              </div>
+              <span class="sk-pct">78%</span>
+            </div>
+            <div class="skill-row" id="sk-nlp">
+              <span class="sk-name">NLP · Computer Vision</span>
+              <div class="sk-bar-wrap" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"
+                aria-label="NLP 74%">
+                <div class="sk-bar" data-width="74"></div>
+              </div>
+              <span class="sk-pct">74%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tech Logos Grid -->
+      <div class="tech-grid" aria-label="Technologies">
+        <div class="tech-item" id="t-python"><i class="fa-brands fa-python" aria-hidden="true"></i><span>Python</span>
+        </div>
+        <div class="tech-item" id="t-java"><i class="fa-brands fa-java" aria-hidden="true"></i><span>Java</span></div>
+        <div class="tech-item" id="t-react"><i class="fa-brands fa-react" aria-hidden="true"></i><span>React</span>
+        </div>
+        <div class="tech-item" id="t-docker"><i class="fa-brands fa-docker" aria-hidden="true"></i><span>Docker</span>
+        </div>
+        <div class="tech-item" id="t-git"><i class="fa-brands fa-git-alt" aria-hidden="true"></i><span>Git</span></div>
+        <div class="tech-item" id="t-node"><i class="fa-brands fa-node-js" aria-hidden="true"></i><span>Node.js</span>
+        </div>
+        <div class="tech-item" id="t-js"><i class="fa-brands fa-js" aria-hidden="true"></i><span>JavaScript</span></div>
+        <div class="tech-item" id="t-linux"><i class="fa-brands fa-linux" aria-hidden="true"></i><span>Linux</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE ── -->
+    <section id="experience" class="section" aria-labelledby="exp-h">
+      <div class="section-label" aria-hidden="true">03</div>
+      <h2 class="section-title" id="exp-h">Expérience</h2>
+
+      <div class="timeline" role="list">
+
+        <article class="tl-item" role="listitem" id="tl-marsa">
+          <div class="tl-left">
+            <span class="tl-date">Mars – Juill. 2026</span>
+            <div class="tl-line" aria-hidden="true"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <div>
+                <h3 class="tl-title">Stage – Data Engineering & Développement</h3>
+                <p class="tl-company"><i class="fa-solid fa-building" aria-hidden="true"></i> Marsa Maroc</p>
+              </div>
+              <span class="tl-badge tl-badge-data">Data Eng.</span>
+            </div>
+            <ul class="tl-list" aria-label="Tâches">
+              <li>Développement de pipelines de traitement et surveillance des données portuaires</li>
+              <li>Conception et maintenance des interfaces front-end et back-end</li>
+              <li>Développement d'une plateforme de gestion et suivi des opérations portuaires</li>
+              <li>Participation à la gestion des activités dédiées aux données</li>
+            </ul>
+            <div class="tl-tags" aria-label="Technologies">
+              <span class="tag">Python</span><span class="tag">Apache Kafka</span><span class="tag">Docker</span><span
+                class="tag">React.js</span><span class="tag">Power BI</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tl-item" role="listitem" id="tl-jee">
+          <div class="tl-left">
+            <span class="tl-date">Juill. – Sept. 2025</span>
+            <div class="tl-line" aria-hidden="true"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <div>
+                <h3 class="tl-title">Stage – Développement Full-Stack</h3>
+                <p class="tl-company"><i class="fa-solid fa-building" aria-hidden="true"></i> Jee</p>
+              </div>
+              <span class="tl-badge tl-badge-dev">Full-Stack</span>
+            </div>
+            <ul class="tl-list" aria-label="Tâches">
+              <li>Conception et développement de fonctionnalités pour des applications web</li>
+              <li>Correction de bugs et amélioration des applications existantes</li>
+              <li>Développement des interfaces utilisateur et des APIs back-end</li>
+            </ul>
+            <div class="tl-tags" aria-label="Technologies">
+              <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">React.js</span><span
+                class="tag">MySQL</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Certifications -->
+      <h3 class="sub-heading" id="certs-h"><i class="fa-solid fa-award" aria-hidden="true"></i> Certifications</h3>
+      <div class="cert-row" aria-labelledby="certs-h">
+        <div class="cert-chip" id="cert-java">
+          <div class="cert-chip-icon orange-icon" aria-hidden="true"><i class="fa-brands fa-java"></i></div>
+          <div>
+            <p class="cert-chip-name">Oracle Certified Professional – Java SE 17</p>
+            <p class="cert-chip-issuer">Oracle</p>
+          </div>
+        </div>
+        <div class="cert-chip" id="cert-mysql">
+          <div class="cert-chip-icon orange-icon" aria-hidden="true"><i class="fa-solid fa-database"></i></div>
+          <div>
+            <p class="cert-chip-name">Oracle Certified – MySQL DBA</p>
+            <p class="cert-chip-issuer">Oracle</p>
+          </div>
+        </div>
+        <div class="cert-chip" id="cert-devops">
+          <div class="cert-chip-icon blue-icon" aria-hidden="true"><i class="fa-solid fa-cloud"></i></div>
+          <div>
+            <p class="cert-chip-name">OCI 2025 Certified DevOps Professional</p>
+            <p class="cert-chip-issuer">Oracle</p>
+          </div>
+        </div>
+        <div class="cert-chip" id="cert-master">
+          <div class="cert-chip-icon purple-icon" aria-hidden="true"><i class="fa-solid fa-chart-simple"></i></div>
+          <div>
+            <p class="cert-chip-name">Master Data Science & Big Data</p>
+            <p class="cert-chip-issuer">FSBM – Casablanca</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section id="projects" class="section" aria-labelledby="projects-h">
+      <div class="section-label" aria-hidden="true">04</div>
+      <h2 class="section-title" id="projects-h">Projets</h2>
+
+      <div class="proj-filter" id="proj-filter" role="tablist" aria-label="Filtrer">
+        <button class="pf-btn active" data-cat="all" id="pf-all" role="tab" aria-selected="true">Tous</button>
+        <button class="pf-btn" data-cat="data" id="pf-data" role="tab" aria-selected="false">Data Engineering</button>
+        <button class="pf-btn" data-cat="fullstack" id="pf-fs" role="tab" aria-selected="false">Full-Stack</button>
+        <button class="pf-btn" data-cat="ml" id="pf-ml" role="tab" aria-selected="false">ML / IA</button>
+        <button class="pf-btn" data-cat="blockchain" id="pf-bc" role="tab" aria-selected="false">Blockchain</button>
+      </div>
+
+      <div class="proj-grid" id="proj-grid" role="tabpanel">
+
+        <article class="proj-card" data-cat="data" id="pc-optim">
+          <div class="pc-top">
+            <span class="pc-icon pc-icon-blue" aria-hidden="true"><i class="fa-solid fa-ship"></i></span>
+            <div class="pc-links">
+              <a href="https://github.com/yassser0/SERVICE_OPTIMISATION_TERMINALE_MARSA_MAROC" target="_blank"
+                rel="noopener noreferrer" class="pc-link" id="pcl-optim" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Optimisation Terminale Marsa Maroc</h3>
+          <p class="pc-desc">Pipeline Python d'optimisation des flux portuaires. Analyse des opérations de la terminale
+            et optimisation en temps réel des ressources portuaires.</p>
+          <div class="pc-tags" aria-label="Technologies"><span class="tag">Python</span><span class="tag">Data
+              Pipeline</span><span class="tag">Optimisation</span></div>
+        </article>
+
+        <article class="proj-card" data-cat="data" id="pc-monitor">
+          <div class="pc-top">
+            <span class="pc-icon pc-icon-blue" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span>
+            <div class="pc-links">
+              <a href="https://github.com/yassser0/SERVICE_ANALYSE_MONITORING_OPERATIONS_PORTUAIRES" target="_blank"
+                rel="noopener noreferrer" class="pc-link" id="pcl-monitor" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Monitoring Opérations Portuaires</h3>
+          <p class="pc-desc">Système d'analyse et monitoring en temps réel des opérations portuaires avec tableaux de
+            bord interactifs pour KPIs portuaires.</p>
+          <div class="pc-tags" aria-label="Technologies"><span class="tag">Python</span><span
+              class="tag">Dashboard</span><span class="tag">Analytics</span></div>
+        </article>
+
+        <article class="proj-card" data-cat="fullstack" id="pc-bot">
+          <div class="pc-top">
+            <span class="pc-icon pc-icon-green" aria-hidden="true"><i class="fa-solid fa-robot"></i></span>
+            <div class="pc-links">
+              <a href="https://github.com/yassser0/SERVICE_BOT_MARSA_MAROC" target="_blank" rel="noopener noreferrer"
+                class="pc-link" id="pcl-bot" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Bot Service Marsa Maroc</h3>
+          <p class="pc-desc">Chatbot intelligent pour les services de Marsa Maroc. Interface conversationnelle pour
+            automatiser les demandes et assister les opérateurs.</p>
+          <div class="pc-tags" aria-label="Technologies"><span class="tag">JavaScript</span><span
+              class="tag">NLP</span><span class="tag">Node.js</span></div>
+        </article>
+
+        <article class="proj-card" data-cat="data" id="pc-scan">
+          <div class="pc-top">
+            <span class="pc-icon pc-icon-blue" aria-hidden="true"><i class="fa-solid fa-box"></i></span>
+            <div class="pc-links">
+              <a href="https://github.com/yassser0/scan_conteneur" target="_blank" rel="noopener noreferrer"
+                class="pc-link" id="pcl-scan" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Scan Conteneur</h3>
+          <p class="pc-desc">Application web de numérisation et gestion des conteneurs portuaires. Lecture et traitement
+            des données de conteneurs en temps réel.</p>
+          <div class="pc-tags" aria-label="Technologies"><span class="tag">JavaScript</span><span
+              class="tag">Scanner</span><span class="tag">Web App</span></div>
+        </article>
+
+        <article class="proj-card" data-cat="ml" id="pc-emotion">
+          <div class="pc-top">
+            <span class="pc-icon pc-icon-purple" aria-hidden="true"><i class="fa-solid fa-face-smile"></i></span>
+            <div class="pc-links">
+              <a href="https://github.com/yassser0/emotion-detection" target="_blank" rel="noopener noreferrer"
+                class="pc-link" id="pcl-emotion" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Détection d'Émotions</h3>
+          <p class="pc-desc">Système de détection d'émotions par Computer Vision et Deep Learning. Classification des
+            expressions faciales en temps réel avec OpenCV.</p>
+          <div class="pc-tags" aria-label="Technologies"><span class="tag">Python</span><span
+              class="tag">OpenCV</span><span class="tag">Deep Learning</span></div>
+        </article>
+
+        <article class="proj-card" data-cat="ml" id="pc-t2v">
+          <div class="pc-top">
+            <span class="pc-icon pc-icon-purple" aria-hidden="true"><i class="fa-solid fa-video"></i></span>
+            <div class="pc-links">
+              <a href="https://github.com/yassser0/text2videoPage" target="_blank" rel="noopener noreferrer"
+                class="pc-link" id="pcl-t2v" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Text-to-Video Platform</h3>
+          <p class="pc-desc">Plateforme web de génération de vidéos à partir de texte avec IA générative. Interface
+            interactive pour convertir descriptions en contenus vidéo.</p>
+          <div class="pc-tags" aria-label="Technologies"><span class="tag">HTML</span><span class="tag">AI
+              Générative</span><span class="tag">Text-to-Video</span></div>
+        </article>
+
+        <article class="proj-card" data-cat="blockchain" id="pc-bc">
+          <div class="pc-top">
+            <span class="pc-icon pc-icon-orange" aria-hidden="true"><i class="fa-solid fa-link"></i></span>
+            <div class="pc-links">
+              <a href="https://github.com/yassser0/CertificatProprieteBlockchain" target="_blank"
+                rel="noopener noreferrer" class="pc-link" id="pcl-bc" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Certificat Propriété Blockchain</h3>
+          <p class="pc-desc">Gestion de certificats de propriété territoriale sur Ethereum. Smart contract Solidity avec
+            interface ReactJS et MetaMask.</p>
+          <div class="pc-tags" aria-label="Technologies"><span class="tag">Solidity</span><span
+              class="tag">Ethereum</span><span class="tag">React.js</span></div>
+        </article>
+
+        <article class="proj-card" data-cat="ml" id="pc-carto">
+          <div class="pc-top">
+            <span class="pc-icon pc-icon-purple" aria-hidden="true"><i class="fa-solid fa-sitemap"></i></span>
+            <div class="pc-links">
+              <a href="https://github.com/yassser0/Cartographie-Semantique-FSBM" target="_blank"
+                rel="noopener noreferrer" class="pc-link" id="pcl-carto" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Cartographie Sémantique FSBM</h3>
+          <p class="pc-desc">Analyse et visualisation des relations sémantiques entre concepts universitaires via NLP et
+            graphes de connaissances en Jupyter.</p>
+          <div class="pc-tags" aria-label="Technologies"><span class="tag">Jupyter</span><span
+              class="tag">NLP</span><span class="tag">Knowledge Graph</span></div>
+        </article>
+
+        <article class="proj-card" data-cat="fullstack" id="pc-micro">
+          <div class="pc-top">
+            <span class="pc-icon pc-icon-green" aria-hidden="true"><i class="fa-solid fa-file-invoice"></i></span>
+            <div class="pc-links">
+              <a href="https://github.com/yassser0" target="_blank" rel="noopener noreferrer" class="pc-link"
+                id="pcl-micro" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Système de Gestion Microservices</h3>
+          <p class="pc-desc">Solution web permettant aux employés et administrateurs de gérer leurs documents
+            administratifs de manière sécurisée avec architecture microservices.</p>
+          <div class="pc-tags" aria-label="Technologies"><span class="tag">Spring Boot</span><span
+              class="tag">Microservices</span><span class="tag">MySQL</span></div>
+        </article>
+
+        <article class="proj-card" data-cat="data" id="pc-pred">
+          <div class="pc-top">
+            <span class="pc-icon pc-icon-blue" aria-hidden="true"><i class="fa-solid fa-industry"></i></span>
+            <div class="pc-links">
+              <a href="https://github.com/yassser0" target="_blank" rel="noopener noreferrer" class="pc-link"
+                id="pcl-pred" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Maintenance Prédictive Industrielle</h3>
+          <p class="pc-desc">Collecte et traitement de données d'équipements industriels pour suivre leur état, détecter
+            anomalies et anticiper besoins de maintenance.</p>
+          <div class="pc-tags" aria-label="Technologies"><span class="tag">Python</span><span class="tag">ML</span><span
+              class="tag">IoT</span></div>
+        </article>
+
+        <article class="proj-card" data-cat="fullstack" id="pc-trans">
+          <div class="pc-top">
+            <span class="pc-icon pc-icon-green" aria-hidden="true"><i
+                class="fa-solid fa-money-bill-transfer"></i></span>
+            <div class="pc-links">
+              <a href="https://github.com/yassser0" target="_blank" rel="noopener noreferrer" class="pc-link"
+                id="pcl-trans" aria-label="GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="pc-title">Système Traitement des Transactions</h3>
+          <p class="pc-desc">Système de certification et traitement des transactions financières. Détection des
+            comportements suspects via indicateurs d'analyse de données.</p>
+          <div class="pc-tags" aria-label="Technologies"><span class="tag">Python</span><span
+              class="tag">Finance</span><span class="tag">Analytics</span></div>
+        </article>
+
+      </div>
+
+      <div class="proj-more" id="proj-more">
+        <a href="https://github.com/yassser0?tab=repositories" target="_blank" rel="noopener noreferrer"
+          class="ghost-btn" id="btn-github-all">
+          <i class="fa-brands fa-github" aria-hidden="true"></i> Voir tous les projets sur GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" class="section" aria-labelledby="contact-h">
+      <div class="section-label" aria-hidden="true">05</div>
+      <h2 class="section-title" id="contact-h">Contact</h2>
+
+      <div class="contact-layout">
+        <div class="contact-left" id="contact-left">
+          <p class="contact-headline">Prêt pour de nouveaux défis ! 🚀</p>
+          <p class="contact-sub">Je suis activement à la recherche d'opportunités en Data Engineering ou Développement
+            Full-Stack. N'hésitez pas à me contacter.</p>
+
+          <div class="contact-info-list">
+            <a href="mailto:yassirach17@gmail.com" class="ci-row" id="ci-email">
+              <span class="ci-icon ci-icon-blue" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
+              <span class="ci-text">yassirach17@gmail.com</span>
+            </a>
+            <a href="tel:+212708472398" class="ci-row" id="ci-phone">
+              <span class="ci-icon ci-icon-blue" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
+              <span class="ci-text">+212 708-472398</span>
+            </a>
+            <div class="ci-row" id="ci-loc">
+              <span class="ci-icon ci-icon-blue" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
+              <span class="ci-text">Casablanca, Maroc</span>
+            </div>
+            <a href="https://github.com/yassser0" target="_blank" rel="noopener noreferrer" class="ci-row"
+              id="ci-github">
+              <span class="ci-icon ci-icon-blue" aria-hidden="true"><i class="fa-brands fa-github"></i></span>
+              <span class="ci-text">github.com/yassser0</span>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate aria-label="Formulaire de contact">
+          <div class="cf-row">
+            <div class="cf-group" id="cfg-name">
+              <label for="cf-name" class="cf-label">Nom</label>
+              <input type="text" id="cf-name" name="name" class="cf-input" placeholder="Votre nom" autocomplete="name"
+                required maxlength="100" />
+              <span class="cf-err" id="err-name" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="cf-group" id="cfg-email">
+              <label for="cf-email" class="cf-label">Email</label>
+              <input type="email" id="cf-email" name="email" class="cf-input" placeholder="vous@email.com"
+                autocomplete="email" required maxlength="254" />
+              <span class="cf-err" id="err-email" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="cf-group" id="cfg-subject">
+            <label for="cf-subject" class="cf-label">Sujet</label>
+            <input type="text" id="cf-subject" name="subject" class="cf-input" placeholder="Objet de votre message"
+              required maxlength="200" />
+            <span class="cf-err" id="err-subject" role="alert" aria-live="polite"></span>
+          </div>
+          <div class="cf-group" id="cfg-msg">
+            <label for="cf-message" class="cf-label">Message</label>
+            <textarea id="cf-message" name="message" class="cf-textarea" placeholder="Votre message..." rows="5"
+              required maxlength="2000"></textarea>
+            <span class="cf-err" id="err-message" role="alert" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="submit-btn" id="submit-btn">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            <span id="submit-text">Envoyer le message</span>
+          </button>
+          <div class="cf-success" id="cf-success" role="alert" aria-live="polite" hidden>
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            Message envoyé ! Je vous répondrai bientôt.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer inside main -->
+    <footer class="footer" role="contentinfo">
+      <p id="footer-copy">© 2026 Mohammed Yasser Rachih · Data Engineer &amp; Full-Stack Developer</p>
+      <div class="footer-soc" aria-label="Réseaux sociaux">
+        <a href="https://github.com/yassser0" target="_blank" rel="noopener noreferrer" class="soc-btn" id="ft-gh"
+          aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a href="mailto:yassirach17@gmail.com" class="soc-btn" id="ft-em" aria-label="Email"><i
+            class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+      </div>
+    </footer>
+
+  </main><!-- /main-content -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
