@@ -288,17 +288,35 @@ input,textarea{font-family:inherit}
 .cv-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,130,246,0.4); filter: brightness(1.1); }
 
 /* =============================================
-   MAIN SECTIONS
+   MAIN SECTIONS & ANIMATIONS
    ============================================= */
 .section {
   padding: 80px 60px;
   border-bottom: 1px solid var(--border);
   position: relative;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .section.visible { opacity: 1; transform: translateY(0); }
+
+/* Scroll Reveal Elements (Cards, Items, Badges) */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Delay Helpers */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
 
 .section-label {
   font-family: var(--font-mono);
@@ -307,7 +325,7 @@ input,textarea{font-family:inherit}
   letter-spacing: 3px;
   font-weight: 500;
   margin-bottom: 8px;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .section-title {
@@ -325,9 +343,14 @@ input,textarea{font-family:inherit}
   content: '';
   position: absolute;
   left: 0; bottom: -8px;
-  width: 40px; height: 3px;
-  background: linear-gradient(90deg, var(--blue), transparent);
+  width: 50px; height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--purple), transparent);
   border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.section:hover .section-title::after {
+  width: 90px;
 }
 
 /* =============================================

@@ -77,9 +77,10 @@
   });
 }());
 
-/* ---- Section Reveal ---- */
+/* ---- Section & Card Scroll Reveal ---- */
 (function initReveal() {
-  const sections = document.querySelectorAll('.section');
+  const targets = document.querySelectorAll('.section, .reveal, .proj-card, .tl-item, .acard, .skill-group, .cert-chip, .tech-item');
+  
   const obs = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
@@ -87,8 +88,14 @@
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08 });
-  sections.forEach(function (s) { obs.observe(s); });
+  }, { threshold: 0.1 });
+
+  targets.forEach(function (el, idx) {
+    if (!el.classList.contains('section') && !el.classList.contains('reveal')) {
+      el.classList.add('reveal');
+    }
+    obs.observe(el);
+  });
 }());
 
 /* ---- Active Sidebar Nav on Scroll ---- */
