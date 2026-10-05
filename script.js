@@ -217,16 +217,43 @@
     if (!ok) return;
 
     btn.disabled = true;
-    btnTxt.textContent = 'Envoi en cours...'; // safe: textContent
+    btnTxt.textContent = 'Envoi en cours...';
 
-    // Simulated send (connect real backend with CSRF in production)
-    setTimeout(function () {
-      success.hidden = false;
+    // Real email sending via FormSubmit API to yassirach17@gmail.com
+    const formData = {
+      name: nameEl.value.trim(),
+      email: emailEl.value.trim(),
+      subject: subjEl.value.trim(),
+      message: msgEl.value.trim(),
+      _captcha: "false"
+    };
+
+    fetch('https://formsubmit.co/ajax/yassirach17@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(function (response) {
+      if (response.ok) return response.json();
+      throw new Error('Network error');
+    })
+    .then(function () {
+      success.removeAttribute('hidden');
       form.reset();
       btn.disabled = false;
       btnTxt.textContent = 'Envoyer le message';
-      setTimeout(function () { success.hidden = true; }, 6000);
-    }, 1300);
+      setTimeout(function () { success.setAttribute('hidden', 'true'); }, 6000);
+    })
+    .catch(function () {
+      // Fallback: Open mailto directly if API fails
+      const mailtoUrl = `mailto:yassirach17@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent("Nom: " + formData.name + "\nEmail: " + formData.email + "\n\nMessage:\n" + formData.message)}`;
+      window.location.href = mailtoUrl;
+      btn.disabled = false;
+      btnTxt.textContent = 'Envoyer le message';
+    });
   });
 
   // Blur validation

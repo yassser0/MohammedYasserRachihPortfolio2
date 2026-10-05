@@ -875,6 +875,9 @@ input,textarea{font-family:inherit}
 .submit-btn:hover { transform: translateY(-2px); filter: brightness(1.1); box-shadow: 0 8px 24px rgba(59,130,246,0.4); }
 .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
+/* Hidden attribute override fix */
+[hidden], .hidden { display: none !important; }
+
 .cf-success {
   display: flex;
   align-items: center;
